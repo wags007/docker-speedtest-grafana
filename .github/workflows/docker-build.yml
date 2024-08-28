@@ -2,7 +2,7 @@ name: Multi-arch build and push to hub
 
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   main:
