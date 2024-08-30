@@ -19,7 +19,7 @@ services:
     volumes:
       - "./docker/grafana/provisioning:/etc/grafana/provisioning"
     ports:
-      - "${GRAFANA_PORT}:3000"
+      - "${GRAFANA_PORT}:${GRAFANA_PORT}"
     environment:
       - "GF_SERVER_ROOT_URL=http://localhost"
       - "GF_SECURITY_ADMIN_PASSWORD=admin"
