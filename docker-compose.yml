@@ -17,7 +17,7 @@ services:
     restart: always
     image: grafana/grafana:11.1.2
     volumes:
-      - "./docker/grafana/provisioning:/etc/grafana/provisioning"
+      - "./data/grafana/provisioning:/etc/grafana/provisioning"
     ports:
       - "${GRAFANA_PORT}:${GRAFANA_PORT}"
     environment:
@@ -29,11 +29,11 @@ services:
 
   speedtest:
     restart: always
-    image: frdmn/speedtest-grafana:latest
+    image: wags007/speedtest:10
     container_name: speedtest
     environment:
       - "SPEEDTEST_INTERVAL=${SPEEDTEST_SPEEDTEST_INTERVAL}"
-      - "SPEEDTEST_HOST=${SPEEDTEST_HOST}"
-      - "SPEEDTEST_SERVER=5746"
+      #- "SPEEDTEST_HOST=${SPEEDTEST_HOST}"
+      #- "SPEEDTEST_SERVER=5746"
     depends_on:
       - influxdb
